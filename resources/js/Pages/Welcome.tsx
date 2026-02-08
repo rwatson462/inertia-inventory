@@ -4,16 +4,19 @@ import {PageTitle} from "../components/ui/PageTitle.tsx";
 import {PageProps} from "../types";
 
 export default function Page() {
-    const {authRoutes} = usePage<PageProps>().props
+    const {authRoutes, user} = usePage<PageProps>().props
 
     return (
         <VerticalStack>
             <div>
                 <PageTitle>Inventory 📋</PageTitle>
-                <p>Motherfucker</p>
+                <p>A silly experiment with Laravel, Inertia, and React</p>
             </div>
             <div>
-                <p><Link href={authRoutes.login}>Log in here</Link> or <Link href={authRoutes.register}>Create an account to get started</Link></p>
+                { user === null
+                    ? <p><Link href={authRoutes.login}>Log in here</Link> or <Link href={authRoutes.register}>Create an account to get started</Link></p>
+                    : <p><Link href={'/dashboard'}>Go to your dashboard</Link></p>
+                }
             </div>
         </VerticalStack>
     )

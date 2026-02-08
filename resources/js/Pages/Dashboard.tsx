@@ -1,6 +1,7 @@
 import {VerticalStack} from "../components/layout/VerticalStack.tsx";
 import {PageTitle} from "../components/ui/PageTitle.tsx";
-import {Link} from "@inertiajs/react";
+import {Link, usePage} from "@inertiajs/react";
+import {PageProps} from "../types";
 
 interface InventoryItem {
     name: string,
@@ -11,16 +12,7 @@ interface InventoryItem {
     user_id: number,
 }
 
-interface User {
-    id: number, // auto-incrementing integer
-    name: string,
-    email: string,
-    created_at: string,
-    updated_at: string,
-}
-
 interface Props {
-    user: User,
     items: InventoryItem[],
     links: {
         items: {
@@ -29,13 +21,13 @@ interface Props {
     }
 }
 
-export default function Page({user, items, links}: Props) {
-    console.log({user, items, links})
+export default function Page({items, links}: Props) {
+    const { user } = usePage<PageProps>().props
 
     return (
         <VerticalStack>
             <div>
-                <PageTitle>Hello {user.name} 👋</PageTitle>
+                <PageTitle>Hello {user!.name} 👋</PageTitle>
                 <p>Dashboard, motherfucker</p>
             </div>
             <div>
