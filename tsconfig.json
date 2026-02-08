@@ -16,5 +16,7 @@
         "noUnusedParameters": true,
         "noFallthroughCasesInSwitch": true
     },
-    "include": ["resources/js"]
+    "include": [
+        "resources/js"
+    ]
 }
