@@ -9,10 +9,12 @@ Route::prefix('auth')->name('auth.')->group(function () {
     Route::inertia('login', 'Auth/Login')->name('login');
     Route::inertia('register', 'Auth/Register')->name('register');
 
+    Route::get('logout', [AuthController::class, 'logout'])->name('logout');
     Route::post('register', [AuthController::class, 'register']);
+    Route::post('login', [AuthController::class, 'login']);
 });
 
-Route::inertia('/', 'Welcome');
+Route::inertia('/', 'Welcome')->name('welcome');
 
 Route::middleware('auth')->group(function () {
     Route::get('dashboard', DashboardController::class)->name('dashboard');

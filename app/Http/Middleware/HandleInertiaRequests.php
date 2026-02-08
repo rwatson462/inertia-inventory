@@ -41,6 +41,7 @@ class HandleInertiaRequests extends Middleware
             'authRoutes' => [
                 'login' => route('auth.login'),
                 'register' => route('auth.register'),
+                'logout' => route('auth.logout'),
             ],
             'user' => Auth::user(),
         ];
