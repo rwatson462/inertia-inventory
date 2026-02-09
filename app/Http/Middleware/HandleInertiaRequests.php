@@ -39,9 +39,9 @@ class HandleInertiaRequests extends Middleware
         return [
             ...parent::share($request),
             'authRoutes' => [
-                'login' => route('auth.login'),
-                'register' => route('auth.register'),
-                'logout' => route('auth.logout'),
+                'login' => route('login'),
+                'register' => route('register'),
+                'logout' => route('logout'),
             ],
             'user' => Auth::user(),
         ];

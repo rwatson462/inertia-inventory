@@ -5,7 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ItemController;
 use Illuminate\Support\Facades\Route;
 
-Route::prefix('auth')->name('auth.')->group(function () {
+Route::prefix('auth')->group(function () {
     Route::inertia('login', 'Auth/Login')->name('login');
     Route::inertia('register', 'Auth/Register')->name('register');
 
