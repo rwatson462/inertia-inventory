@@ -15,7 +15,7 @@
 
         @inertiaHead
     </head>
-    <body class="from-slate-700 to-slate-900 bg-linear-to-br text-slate-400 min-h-dvh h-dvh p-8">
+    <body class="from-slate-150 to-slate-200 dark:from-slate-800 dark:to-slate-950 bg-linear-to-br text-slate-400 min-h-dvh h-dvh p-8">
         @inertia
     </body>
 </html>
